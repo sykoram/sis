@@ -10,6 +10,7 @@
         blue: "#2A77B5",
         blue2: "#82b5df",
         blue3: "#abcee9",
+		blue4: "#d3e6f4",
         green: "#BAD683",
         lightgray: "#ccc",
         lightorange: "#FFC38E",
@@ -36,6 +37,7 @@
 		display: block;
 		padding: 0;
 		margin: 0;
+		border: none;
 		overflow-x: auto;
 		overflow-y: hidden;
 		white-space: nowrap;
@@ -48,9 +50,11 @@
     }
     #stev_nazev_modulu {
         font-weight: bold;
+		padding: 0;
     }
     #stev_podtitul_modulu {
         font-size: .9rem;
+		margin: 0;
     }
     #stev_nazev.stev_empty_subtitle #stev_podtitul_modulu {display: none}
     #stev_logo {display: none}
@@ -145,7 +149,7 @@
 	}
 	#stev_home::after {
 		content: "⌂";
-        font-size: 2rem;
+        font-size: 1.8rem;
         line-height: 1rem;
 	}
 	#stev_login::after {
@@ -222,8 +226,8 @@
 	}
 	.menu .ico .home::after {
         content: "⌂";
-        font-size: 1.6rem;
-        line-height: .8rem;
+        font-size: 1.4rem;
+        line-height: .9rem;
     }
 	.menu .ico .bookmarks::after {
         content: "☆";
@@ -231,11 +235,6 @@
         line-height: 1rem;
     }
 	.menu .ico .print {display: none}
-	/*.menu .ico .print::after {
-        content: "🗎";
-        font-size: 1.2rem;
-        line-height: 1rem;
-    }*/
     .menu .ico .modul {display: none}
     /*.menu .ico .modul::after {
         content: "⊞";
@@ -252,9 +251,15 @@
     .menu1 {
         background-color: ${c.blue2} !important;
     }
+	.menu1 td > a:hover {
+		background-color: ${c.blue3} !important;
+	}
     .menu2 {
         background-color: ${c.blue3} !important;
     }
+	.menu2 td > a:hover {
+		background-color: ${c.blue4} !important;
+	}
     .menu .menu_a {
         background-color: white;
         font-weight: bold;
@@ -395,8 +400,12 @@
 	}
 	#foot td > a:hover {
 		background-color: ${c.blue3} !important;
+		text-decoration: none;
 	}
 	#foot .top, #foot .tisk {display: none !important}
+	#foot + .shadow {
+		display: none;
+	}
 	#paticka2 {
 		margin: .5rem 0 !important;
 	}
@@ -411,13 +420,12 @@
     }
     inner {
         display: flex;
-        width: 100vw !important;
+        width: 100% !important;
         overflow-x: auto;
-                overflow-y: hidden;
+        overflow-y: hidden;
     }
     inner item {
-        display: flex;
-        border: none !important;
+        ...
     }
     */
 
