@@ -2,6 +2,10 @@
 
 This is a basic Android app, which loads [the website of SIS CUNI](https://is.cuni.cz/studium/) (using [WebView](https://developer.android.com/reference/android/webkit/WebView.html)) and injects custom styles and scripts to make the website more mobile- and user-friendly.
 
+This app does NOT collect usernames, passwords, personal information or any other data.
+
+Note: Some things may be hidden or not work.
+
 ## Download
 
 Download the APK from [Releases](https://github.com/sykoram/sis/releases) and install it ("Install apps from external/unknown sources" has to be allowed in your Android).
