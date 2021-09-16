@@ -23,7 +23,8 @@
 	h1 {
 		font-size: 1.2rem;
 	}
-    /* HEADER */
+    
+	/* HEADER */
 	#stev_header_bkg {
         background-color: ${c.blue};
         color: white;
@@ -210,7 +211,7 @@
         border: none !important;
     }
     table.menu td > * {
-        padding: .5rem !important;
+        padding: .75rem .5rem !important;
         color: black !important;
         text-decoration: none;
 		border: 0 !important;
@@ -268,7 +269,24 @@
         display: none !important;
     }
 	.menu .shadow, .menu .shadow_a {display: none;}
+	
 	/* MESSAGES */
+	td.info_ico {
+		display: none;
+	}
+	td.info_text {
+		border: none;
+	}
+	td.error_ico {
+		display: none;
+	}
+	td.error_text {
+		border: none;
+	}
+
+	.pozn1 {
+		border-top-width: 1px;
+	}
 
 	/* FILTER */
 	.filtr_div {
@@ -279,12 +297,12 @@
 	}
 	.filtr_div > div:first-child {
 		background-color: ${c.blue3} !important;
-		padding: .25rem !important;
 		border: none !important;
 	}
 	.filtr_div > div:first-child > a {
 		background: none !important;
-		padding: 0 !important;
+		display: block;
+		padding: .25rem;
 	}
 	.filtr_div > div:first-child > a.filtr_on::before {
 		content: "▲";
@@ -315,6 +333,7 @@
 		border-top-width: 1px !important;
 	}
 	#akce_hr {display: none !important}
+	
 	/* CONTENT */
 	#content {
 		overflow: hidden;
@@ -374,7 +393,26 @@
     }
 	.link5 {
 		line-height: .8em;
+		border: none !important;
 	}
+	.link5:hover {
+		background-color: #eaeaea !important;
+		text-decoration: underline;
+	}
+	.seznam1 .akt {
+		border: none !important;
+		background-color: ${c.blue} !important;
+		padding: .25rem;
+	}
+	.seznam1 .link1 {
+		padding: .25rem;
+		border: none;
+	}
+	.seznam1 .link1:hover {
+		border: none;
+		text-decoration: none;
+	}
+
     /* FOOTER */
 	#foot {
         display: flex;
@@ -406,6 +444,7 @@
 	#foot + .shadow {
 		display: none;
 	}
+	
 	#paticka2 {
 		margin: .5rem 0 !important;
 	}

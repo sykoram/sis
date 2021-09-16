@@ -11,6 +11,6 @@
   scrollActiveMenuIntoView();
 
   document.getElementById("login").placeholder = "Login";
-  document.getElementById("heslo").placeholder = "Heslo";
+  document.getElementById("heslo").placeholder = "Password";
 
 })();
