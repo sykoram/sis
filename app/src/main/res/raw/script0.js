@@ -293,7 +293,7 @@
 		border: 1px solid ${c.blue} !important;
 		background-color: #eee !important;
 		padding: 0 !important;
-		margin: .25rem 0 !important;
+		margin: .5rem .25rem !important;
 	}
 	.filtr_div > div:first-child {
 		background-color: ${c.blue3} !important;
@@ -313,7 +313,7 @@
 	.filtr_div > div:nth-child(2) {
 		display: flex;
         width: 100%;
-        /*margin: 0 !important;*/
+		flex-direction: column;
 	}
 	.filtr_div > div:nth-child(2) > form {
 		display: flex;
