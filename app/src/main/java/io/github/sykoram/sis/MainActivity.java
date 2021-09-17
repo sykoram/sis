@@ -25,7 +25,6 @@ public class MainActivity extends AppCompatActivity {
 
     ProgressBar progressBar;
     boolean pageFinished = true;
-    boolean progress100 = true;
 
     WebViewClient webClient = new WebViewClient() {
         @Override
