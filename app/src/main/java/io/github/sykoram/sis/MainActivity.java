@@ -9,9 +9,10 @@ import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
-import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.res.ResourcesCompat;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
 
     WebView webView;
 
-    ProgressBar progressBar;
+    SwipeRefreshLayout refreshLayout;
     boolean pageFinished = true;
 
     WebViewClient webClient = new WebViewClient() {
@@ -42,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
             super.onPageStarted(view, url, bitmap);
 
             pageFinished = false;
-            if (progressBar.getVisibility() == ProgressBar.GONE){
-                progressBar.setVisibility(ProgressBar.VISIBLE);
+            if (!refreshLayout.isRefreshing()) {
+                refreshLayout.setRefreshing(true);
             }
 
             try {
@@ -68,20 +69,27 @@ public class MainActivity extends AppCompatActivity {
             }
 
             pageFinished = true;
-            progressBar.setVisibility(ProgressBar.GONE);
+            refreshLayout.setRefreshing(false);
         }
     };
 
     WebChromeClient webChromeClient = new WebChromeClient() {
         @Override
         public void onProgressChanged(WebView view, int newProgress) {
-            if (newProgress < 100 && progressBar.getVisibility() == ProgressBar.GONE){
-                progressBar.setVisibility(ProgressBar.VISIBLE);
+            if (newProgress < 100 && !refreshLayout.isRefreshing()){
+                refreshLayout.setRefreshing(true);
             }
 
             if (newProgress == 100 && pageFinished) {
-                progressBar.setVisibility(ProgressBar.GONE);
+                refreshLayout.setRefreshing(false);
             }
+        }
+    };
+
+    SwipeRefreshLayout.OnRefreshListener refreshListener = new SwipeRefreshLayout.OnRefreshListener() {
+        @Override
+        public void onRefresh() {
+            webView.reload();
         }
     };
 
@@ -91,14 +99,16 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         webView = findViewById(R.id.webView);
-        progressBar = findViewById(R.id.progressBar);
-
         webView.setWebViewClient(webClient);
         webView.setWebChromeClient(webChromeClient);
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
         webView.loadUrl("https://is.cuni.cz/studium");
+
+        refreshLayout = findViewById(R.id.swipeRefreshLayout);
+        refreshLayout.setOnRefreshListener(refreshListener);
+        refreshLayout.setColorSchemeColors(ResourcesCompat.getColor(getResources(), R.color.primary_blue, null));
     }
 
     @Override
