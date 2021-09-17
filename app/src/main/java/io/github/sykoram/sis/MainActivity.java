@@ -11,7 +11,6 @@ import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.res.ResourcesCompat;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.io.IOException;
@@ -86,13 +85,6 @@ public class MainActivity extends AppCompatActivity {
         }
     };
 
-    SwipeRefreshLayout.OnRefreshListener refreshListener = new SwipeRefreshLayout.OnRefreshListener() {
-        @Override
-        public void onRefresh() {
-            webView.reload();
-        }
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -107,8 +99,8 @@ public class MainActivity extends AppCompatActivity {
         webView.loadUrl("https://is.cuni.cz/studium");
 
         refreshLayout = findViewById(R.id.swipeRefreshLayout);
-        refreshLayout.setOnRefreshListener(refreshListener);
-        refreshLayout.setColorSchemeColors(ResourcesCompat.getColor(getResources(), R.color.primary_blue, null));
+        refreshLayout.setColorSchemeResources(R.color.primary_blue);
+        refreshLayout.setEnabled(false);
     }
 
     @Override
