@@ -73,22 +73,25 @@
 		top: 0 !important;
     }
     #login, #heslo {
-        width: 8rem;
+        width: 6rem;
         background-color: white;
         border: none;
         border-radius: .25rem;
-        height: 1.2rem;
-        margin: 0 0 .25rem .25rem;
+        height: 1.3rem;
+        margin: 0 .2rem .2rem 0;
 		font-size: .9rem;
 		padding: .25rem;
     }
+	#heslo {
+		width: 8rem;
+	}
     #flogin input[type="submit"] {
         color: ${c.blue};
         background-color: #d8e9f6;
         border: none;
         border-radius: .25rem;
-        height: 1.2rem;
-        margin: 0 0 .25rem .25rem;
+        height: 1.3rem;
+        margin: 0;
 		font-size: .9rem;
     }
     label[for="login"], label[for="heslo"], #chkAutologin, #flogin label[for="chkAutologin"] {display: none}
