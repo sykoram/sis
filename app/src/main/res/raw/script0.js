@@ -7,7 +7,7 @@
 
     // colors
     const c = {
-        blue: "#2A77B5",
+        blue: "#276aaa",
         blue2: "#82b5df",
         blue3: "#abcee9",
 		blue4: "#d3e6f4",
@@ -26,7 +26,7 @@
     
 	/* HEADER */
 	#stev_header_bkg {
-        background-color: ${c.blue};
+        background-color: #2A77B5;
         color: white;
 		margin: 0;
 		display: flex;
@@ -224,6 +224,7 @@
 		background: none;
 		width: auto;
 		height: auto;
+		padding: .75rem !important;
 	}
 	.menu .ico .home::after {
         content: "⌂";
@@ -328,7 +329,33 @@
 	.filtr_div > div:nth-child(2) > form td {
 		white-space: nowrap;
 	}
+	.filtr_div .tab1 th {
+		vertical-align: middle;
+	}
+	.filtr_div .inp1 {
+		font-size: 1.2em;
+		margin: 0;
+		background-color: white;
+		border: none;
+		border-bottom: 1px solid ${c.blue};
+	}
+	.filtr_div input[type="checkbox"], .filtr_div input[type="radio"] {
+		margin-left: .25rem;
+	}
 	.filtr_div + div[id^="filtr_hr"] {display: none}
+	.but_find, .but_next, .but_save, .but1 {
+		background: ${c.blue};
+		color: white;
+		padding: .25rem .75rem !important;
+		border: 0;
+		font-size: 1.2em;
+	}
+	.but_find > a, .but_next > a, .but_save > a, .but1 > a {
+		color: white !important;
+	}
+	.but_filtr, img[src="../img/ico_n_arrow_refresh_small_grey.png"] {
+		display: none;
+	}
 	#akce_div {
 		border-top-width: 1px !important;
 	}
