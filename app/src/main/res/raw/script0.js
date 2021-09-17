@@ -413,6 +413,11 @@
 		text-decoration: none;
 	}
 
+	.link8 {
+		background: none !important;
+		padding: 0 !important;
+	}
+
     /* FOOTER */
 	#foot {
         display: flex;
