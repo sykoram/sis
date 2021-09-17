@@ -4,10 +4,12 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -20,6 +22,10 @@ import java.util.Scanner;
 public class MainActivity extends AppCompatActivity {
 
     WebView webView;
+
+    ProgressBar progressBar;
+    boolean pageFinished = true;
+    boolean progress100 = true;
 
     WebViewClient webClient = new WebViewClient() {
         @Override
@@ -35,6 +41,11 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onPageStarted(WebView view, String url, Bitmap bitmap) {
             super.onPageStarted(view, url, bitmap);
+
+            pageFinished = false;
+            if (progressBar.getVisibility() == ProgressBar.GONE){
+                progressBar.setVisibility(ProgressBar.VISIBLE);
+            }
 
             try {
                 String styleScript = fileToString(getResources().openRawResource(R.raw.script0));
@@ -56,6 +67,22 @@ public class MainActivity extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
+            pageFinished = true;
+            progressBar.setVisibility(ProgressBar.GONE);
+        }
+    };
+
+    WebChromeClient webChromeClient = new WebChromeClient() {
+        @Override
+        public void onProgressChanged(WebView view, int newProgress) {
+            if (newProgress < 100 && progressBar.getVisibility() == ProgressBar.GONE){
+                progressBar.setVisibility(ProgressBar.VISIBLE);
+            }
+
+            if (newProgress == 100 && pageFinished) {
+                progressBar.setVisibility(ProgressBar.GONE);
+            }
         }
     };
 
@@ -65,7 +92,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         webView = findViewById(R.id.webView);
+        progressBar = findViewById(R.id.progressBar);
+
         webView.setWebViewClient(webClient);
+        webView.setWebChromeClient(webChromeClient);
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
