@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -68,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             pageFinished = true;
-            refreshLayout.setRefreshing(false);
+            onPageLoaded(view);
         }
     };
 
@@ -80,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
             }
 
             if (newProgress == 100 && pageFinished) {
-                refreshLayout.setRefreshing(false);
+                onPageLoaded(view);
             }
         }
     };
@@ -96,11 +97,19 @@ public class MainActivity extends AppCompatActivity {
         webView.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+        webView.setVisibility(View.GONE);
         webView.loadUrl("https://is.cuni.cz/studium");
 
         refreshLayout = findViewById(R.id.swipeRefreshLayout);
         refreshLayout.setColorSchemeResources(R.color.primary_blue);
         refreshLayout.setEnabled(false);
+    }
+
+    public void onPageLoaded(WebView view) {
+        refreshLayout.setRefreshing(false);
+        if (view.getVisibility() == View.GONE) {
+            view.setVisibility(View.VISIBLE);
+        }
     }
 
     @Override
