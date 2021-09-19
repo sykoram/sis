@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    let cssReset = `html {box-sizing: border-box; font-size: 16px !important;}
+    const cssReset = `html {box-sizing: border-box; font-size: 16px !important;}
     *, *:before, *:after {box-sizing: inherit;}
     body, h1, h2, h3, h4, h5, h6, p, ol, ul, form {margin: 0; padding: 0;}`;
 
@@ -13,7 +13,7 @@
 		blue4: "#d3e6f4",
     };
 
-    let main = `
+    const main = `
 	html, body {
 		height: 100%;
 	}
@@ -58,7 +58,7 @@
     #verze_modulu {display: none}
     #stev_nazev {
         display: inline-block;
-        margin: .25rem;
+        margin: .5rem;
     }
     #stev_nazev_modulu {
         font-weight: bold;
