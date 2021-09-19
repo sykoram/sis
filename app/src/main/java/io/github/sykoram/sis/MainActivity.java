@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.webkit.CookieManager;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -110,6 +111,7 @@ public class MainActivity extends AppCompatActivity {
         if (view.getVisibility() == View.GONE) {
             view.setVisibility(View.VISIBLE);
         }
+        CookieManager.getInstance().flush();
     }
 
     @Override
