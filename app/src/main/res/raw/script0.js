@@ -285,19 +285,12 @@
 	.menu .shadow, .menu .shadow_a {display: none;}
 	
 	/* MESSAGES */
-	td.info_ico {
+	td.info_ico, td.warning_ico, td.error_ico {
 		display: none;
 	}
-	td.info_text {
-		border: none;
+	td.info_text, td.warning_text, td.error_text {
+		border: none !important;
 	}
-	td.error_ico {
-		display: none;
-	}
-	td.error_text {
-		border: none;
-	}
-
 	.pozn1 {
 		border-top-width: 1px;
 	}
