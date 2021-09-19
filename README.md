@@ -13,8 +13,7 @@ The appearence may change over time, but I'll try to update these screenshots.
 *Note: Some of the elements appear cut off in the screenshots, but they are, in fact, horizontally scrollable. \
 (Czech version is shown, but switching to English is possible.)*
 
-<img src="screenshots/home.png?raw=true" width=270>&emsp;<img src="screenshots/subjects.png?
-raw=true" width=270>&emsp;<img src="screenshots/subjects-table.png?raw=true" width=270>&emsp;<img src="screenshots/schedule.png?raw=true" width=270>
+<img src="screenshots/home.png?raw=true" width=270>&emsp;<img src="screenshots/subjects.png?raw=true" width=270>&emsp;<img src="screenshots/subjects-table.png?raw=true" width=270>&emsp;<img src="screenshots/schedule.png?raw=true" width=270>
 
 ## Download
 
