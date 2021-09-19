@@ -508,6 +508,11 @@
 		width: 16rem !important;
 	}
 	body.index #hint {display: none}
+
+	/* ANKETA */
+	body.anketa #content > .tab1 > tbody {
+		white-space: normal;
+	}
 	`;
 
     function addViewportMeta() {
