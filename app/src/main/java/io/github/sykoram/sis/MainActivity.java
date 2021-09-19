@@ -28,6 +28,11 @@ public class MainActivity extends AppCompatActivity {
     SwipeRefreshLayout refreshLayout;
     boolean pageFinished = true;
 
+    /* The first path part after "is.cuni.cz/studium/" (ev. with ".php" removed):
+         index, rozvrhng, predmety, term_st2, predm_st2, szz_st, zkous_st, anketa, dipl_st, grupicek, omne, role (...)
+       This will be added as a class to <body>. */
+    String pageIdentifier = "";
+
     WebViewClient webClient = new WebViewClient() {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
@@ -48,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
                 refreshLayout.setRefreshing(true);
             }
 
+            pageIdentifier = getPageIdentifier(url);
             try {
+                view.evaluateJavascript("document.body.classList.add('" + pageIdentifier + "');", null);
                 String styleScript = fileToString(getResources().openRawResource(R.raw.script0));
                 view.evaluateJavascript(styleScript, null);
             } catch (Exception e) {
@@ -60,7 +67,9 @@ public class MainActivity extends AppCompatActivity {
         public void onPageFinished(WebView view, String url) {
             super.onPageFinished(view, url);
 
+            pageIdentifier = getPageIdentifier(url);
             try {
+                view.evaluateJavascript("document.body.classList.add('" + pageIdentifier + "');", null);
                 String styleScript = fileToString(getResources().openRawResource(R.raw.script0));
                 view.evaluateJavascript(styleScript, null);
                 String script = fileToString(getResources().openRawResource(R.raw.script1));
@@ -123,7 +132,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public boolean isUrlAllowed(Uri url) {
+    public static boolean isUrlAllowed(Uri url) {
         List<String> allowedSchemes = Arrays.asList("http", "https");
         if (!allowedSchemes.contains(url.getScheme())) {
             return false;
@@ -159,5 +168,20 @@ public class MainActivity extends AppCompatActivity {
         String str = s.hasNext() ? s.next() : "";
         is.close();
         return str;
+    }
+
+    public static String getPageIdentifier(String url) {
+        String identifier = "";
+
+        Uri uri = Uri.parse(url);
+        String host = uri.getHost();
+        String path = uri.getPath();
+        if (host.equals("is.cuni.cz") && path.startsWith("/studium")) {
+            path = path.replaceFirst("^/studium(/eng)?/?", "")
+                    .replaceFirst("(/index)?\\.php$", "");
+            identifier = path.split("/")[0];
+        }
+
+        return identifier;
     }
 }
