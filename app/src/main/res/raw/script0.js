@@ -11,9 +11,6 @@
         blue2: "#82b5df",
         blue3: "#abcee9",
 		blue4: "#d3e6f4",
-        green: "#BAD683",
-        lightgray: "#ccc",
-        lightorange: "#FFC38E",
     };
 
     let main = `
@@ -372,7 +369,6 @@
         display: flex;
         width: 100%;
         margin: .25rem 0 !important;
-		/*border: 1px solid ${c.lightgray} !important;*/
     }
 	#content .tab1 > colgroup {
 		display: none;
