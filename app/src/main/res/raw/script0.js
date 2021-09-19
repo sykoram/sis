@@ -346,6 +346,9 @@
 		border: none;
 		border-bottom: 1px solid ${c.blue};
 	}
+	.filtr_div .inp1[type="text"] {
+		padding-left: .25rem;
+	}
 	.filtr_div input[type="checkbox"], .filtr_div input[type="radio"] {
 		margin-left: .25rem;
 	}
