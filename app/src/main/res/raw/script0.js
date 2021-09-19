@@ -507,7 +507,7 @@
 	body.index #content .link5 {
 		width: 16rem !important;
 	}
-	body.index #hing {display: none}
+	body.index #hint {display: none}
 	`;
 
     function addViewportMeta() {
