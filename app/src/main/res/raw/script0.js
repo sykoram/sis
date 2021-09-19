@@ -14,20 +14,33 @@
     };
 
     let main = `
+	html, body {
+		height: 100%;
+	}
     body {
         font-family: arial, helvetica, verdana, tahoma;
+		display: flex;
+		flex-direction: column;
     }
+	body > * {
+		flex: 1 0 auto;
+	}
+
 	h1 {
 		font-size: 1.2rem;
 	}
     
 	/* HEADER */
+	a[name="stev_top"] {
+		display: none;
+	}
 	#stev_header_bkg {
         background-color: #2A77B5;
         color: white;
 		margin: 0;
 		display: flex;
         width: 100%;
+		flex-grow: 0;
     }
 	#stev_header {
 		height: auto;
@@ -449,7 +462,9 @@
         display: none;
     }
 	#paticka2 {
-		margin: .5rem 0 !important;
+		margin: 0 !important;
+		padding: .5rem 0 !important;
+		flex-grow: 0;
 	}
     `;
 
