@@ -433,7 +433,7 @@
 		display: none;
 	}
 	.tab1 *[id^="pamela"] {
-		white-space: break-spaces;
+		white-space: normal;
 	}
 	.tab1 *[id^="pamela"] > div:first-child {display: none !important}
 	#roztab {
