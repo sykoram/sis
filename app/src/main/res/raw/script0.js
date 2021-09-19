@@ -483,23 +483,32 @@
 	}
     `;
 
-    /*
-    HORIZONTAL SCROLL:
-    outer {
-        display: flex;
-        width: 100%;
-        margin: 0 !important;
-    }
-    inner {
-        display: flex;
-        width: 100% !important;
-        overflow-x: auto;
-        overflow-y: hidden;
-    }
-    inner item {
-        ...
-    }
-    */
+    const pageSpecific = `
+	/* INDEX */
+	body.index .menu1 + tr {display: none}
+	body.index #content {
+		padding-top: .25rem;
+	}
+	body.index #content > div:nth-child(2n) {
+		display: block !important;
+		background-image: linear-gradient(to right, #1f4789, #2a77b5) !important;
+		padding: .5rem !important;
+	}
+	body.index #content > div:nth-child(2n+1) {
+		background-color: white !important;
+		border: none !important;
+		padding: .5rem !important;
+		margin-bottom: 0 !important;
+	}
+	body.index #content .hr1 {
+		border: none;
+		border-bottom: 1px solid #ccc;
+	}
+	body.index #content .link5 {
+		width: 16rem !important;
+	}
+	body.index #hing {display: none}
+	`;
 
     function addViewportMeta() {
         let meta = document.createElement("meta");
@@ -512,7 +521,7 @@
         let styleEl = document.createElement("style");
         styleEl.setAttribute("type", "text/css");
         styleEl.setAttribute("class", "custom");
-        styleEl.appendChild(document.createTextNode(cssReset + main));
+        styleEl.appendChild(document.createTextNode(cssReset + main + pageSpecific));
         document.head.appendChild(styleEl);
     }
 
