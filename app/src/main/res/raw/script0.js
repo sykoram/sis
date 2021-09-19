@@ -445,37 +445,9 @@
 	}
 
     /* FOOTER */
-	#foot {
-        display: flex;
-        width: 100%;
-        margin: 1rem 0 0 0 !important;
-		border: 0 !important;
+	#foot, #foot + .shadow {
+        display: none;
     }
-	#foot tbody {
-		width: 100%;
-	}
-    #foot tbody tr {
-		display: flex;
-		width: 100% !important;
-        overflow-x: auto;
-        overflow-y: hidden;
-		background-color: ${c.blue2} !important;
-    }
-	#foot td > * {
-		padding: .5rem !important;
-        color: black;
-        text-decoration: none;
-		border: 0 !important;
-	}
-	#foot td > a:hover {
-		background-color: ${c.blue3} !important;
-		text-decoration: none;
-	}
-	#foot .top, #foot .tisk {display: none !important}
-	#foot + .shadow {
-		display: none;
-	}
-	
 	#paticka2 {
 		margin: .5rem 0 !important;
 	}
