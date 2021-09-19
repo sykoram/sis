@@ -404,7 +404,7 @@
 		border-top: none !important;
 		border-bottom: none !important;
 	}
-	.head1, .head1 td {
+	.head1, .head1 td, .head10, .head10 td {
 		background-color: ${c.blue} !important;
 	}
 	.head2, .head2 td {
@@ -415,6 +415,10 @@
 	}
 	.form_div {
 		margin: .25rem 0 !important;
+		border-color: ${c.blue};
+	}
+	.form_div_title {
+		background-color: ${c.blue};
 	}
 	.form_div > table {
         display: flex;
