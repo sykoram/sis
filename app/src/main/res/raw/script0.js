@@ -417,6 +417,9 @@
 		overflow-y: hidden;
 		white-space: nowrap;
     }
+	td img[src$="order_down.gif"], td img[src$="order_up.gif"] {
+		display: none;
+	}
 	.tab1 *[id^="pamela"] {
 		white-space: break-spaces;
 	}
