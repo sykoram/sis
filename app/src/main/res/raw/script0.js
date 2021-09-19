@@ -364,6 +364,17 @@
 	}
 	#akce_div {
 		border-top-width: 1px !important;
+		background-color: #eee !important;
+		padding: 0 !important;
+		margin: .5rem .25rem !important;
+	}
+	#akce_div > div:first-child {
+		background-color: #ebc5c5 !important;
+		border: none !important;
+		padding: .25rem !important;
+	}
+	#akce_div > div:first-child > img {
+		display: none;
 	}
 	#akce_hr {display: none !important}
 	
