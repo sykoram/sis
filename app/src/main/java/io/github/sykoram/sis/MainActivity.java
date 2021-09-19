@@ -120,13 +120,23 @@ public class MainActivity extends AppCompatActivity {
 
         List<String> allowedBeginnings = Arrays.asList(
                 "is.cuni.cz/studium", "idp.cuni.cz", "ldapuser.cuni.cz");
-        String hostAndPath = url.getHost().concat(url.getPath());
+        List<String> disallowedBeginnings = Arrays.asList(
+                "is.cuni.cz/studium/v4");
 
+        String hostAndPath = url.getHost().concat(url.getPath());
         boolean allowed = false;
         for (String bgn : allowedBeginnings) {
             if (hostAndPath.startsWith(bgn)) {
                 allowed = true;
                 break;
+            }
+        }
+        if (allowed) {
+            for (String bgn : disallowedBeginnings) {
+                if (hostAndPath.startsWith(bgn)) {
+                    allowed = false;
+                    break;
+                }
             }
         }
 
