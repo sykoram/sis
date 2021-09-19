@@ -36,6 +36,7 @@
 	}
 	#stev_header_bkg {
         background-color: #2A77B5;
+		background-image: linear-gradient(to right, #1f4789, #2a77b5);
         color: white;
 		margin: 0;
 		display: flex;
