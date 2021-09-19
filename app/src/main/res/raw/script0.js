@@ -344,8 +344,8 @@
 	}
 	.filtr_div + div[id^="filtr_hr"] {display: none}
 	.but_find, .but_next, .but_save, .but1 {
-		background: ${c.blue};
-		color: white;
+		background: ${c.blue} !important;
+		color: white !important;
 		padding: .25rem .75rem !important;
 		border: 0;
 		font-size: 1.2em;
