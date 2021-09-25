@@ -1,8 +1,11 @@
 package io.github.sykoram.sis;
 
+import static io.github.sykoram.sis.MainActivityUtils.readFileToString;
+import static io.github.sykoram.sis.MainActivityUtils.getPageIdentifier;
+import static io.github.sykoram.sis.MainActivityUtils.isUrlAllowed;
+
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.CookieManager;
@@ -15,11 +18,7 @@ import android.webkit.WebViewClient;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import java.io.IOException;
 import java.io.InputStream;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
             pageIdentifier = getPageIdentifier(url);
             try {
                 view.evaluateJavascript("document.body.classList.add('" + pageIdentifier + "');", null);
-                String styleScript = fileToString(getResources().openRawResource(R.raw.script0));
+                String styleScript = readFileToString(getResources().openRawResource(R.raw.script0));
                 view.evaluateJavascript(styleScript, null);
             } catch (Exception e) {
                 e.printStackTrace();
@@ -68,12 +67,11 @@ public class MainActivity extends AppCompatActivity {
             super.onPageFinished(view, url);
 
             pageIdentifier = getPageIdentifier(url);
-            try {
-                view.evaluateJavascript("document.body.classList.add('" + pageIdentifier + "');", null);
-                String styleScript = fileToString(getResources().openRawResource(R.raw.script0));
-                view.evaluateJavascript(styleScript, null);
-                String script = fileToString(getResources().openRawResource(R.raw.script1));
-                view.evaluateJavascript(script, null);
+            view.evaluateJavascript("document.body.classList.add('" + pageIdentifier + "');", null);
+            try (InputStream styleScriptIs = getResources().openRawResource(R.raw.script0);
+                 InputStream scriptIs = getResources().openRawResource(R.raw.script1)) {
+                view.evaluateJavascript(readFileToString(styleScriptIs), null);
+                view.evaluateJavascript(readFileToString(scriptIs), null);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -132,56 +130,4 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public static boolean isUrlAllowed(Uri url) {
-        List<String> allowedSchemes = Arrays.asList("http", "https");
-        if (!allowedSchemes.contains(url.getScheme())) {
-            return false;
-        }
-
-        List<String> allowedBeginnings = Arrays.asList(
-                "is.cuni.cz/studium", "idp.cuni.cz", "ldapuser.cuni.cz");
-        List<String> disallowedBeginnings = Arrays.asList(
-                "is.cuni.cz/studium/v4");
-
-        String hostAndPath = url.getHost().concat(url.getPath());
-        boolean allowed = false;
-        for (String bgn : allowedBeginnings) {
-            if (hostAndPath.startsWith(bgn)) {
-                allowed = true;
-                break;
-            }
-        }
-        if (allowed) {
-            for (String bgn : disallowedBeginnings) {
-                if (hostAndPath.startsWith(bgn)) {
-                    allowed = false;
-                    break;
-                }
-            }
-        }
-
-        return allowed;
-    }
-
-    public static String fileToString(InputStream is) throws IOException {
-        Scanner s = new Scanner(is).useDelimiter("\\A");
-        String str = s.hasNext() ? s.next() : "";
-        is.close();
-        return str;
-    }
-
-    public static String getPageIdentifier(String url) {
-        String identifier = "";
-
-        Uri uri = Uri.parse(url);
-        String host = uri.getHost();
-        String path = uri.getPath();
-        if (host.equals("is.cuni.cz") && path.startsWith("/studium")) {
-            path = path.replaceFirst("^/studium(/eng)?/?", "")
-                    .replaceFirst("(/index)?\\.php$", "");
-            identifier = path.split("/")[0];
-        }
-
-        return identifier;
-    }
 }
