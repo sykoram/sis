@@ -198,6 +198,15 @@
         font-size: 1.5rem;
         line-height: 1rem;
 	}
+
+	#loading .head1 {
+		background-color: ${c.blue} !important;
+		color: white !important;
+	}
+	#loading .head1 + div {
+		border: 1px solid ${c.blue} !important;
+	}
+
     /* MENU */
     body > table, body > table > tbody, body > table > tbody > tr, body > table > tbody > tr > td {
         display: block;
