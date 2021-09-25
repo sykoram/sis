@@ -153,6 +153,9 @@
 		overflow-y: hidden;
 		white-space: nowrap;
 	}
+	#stev_role_list .link2 {
+		color: black !important;
+	}
 	#stev_user_roles_fak {display: none}
 	#stev_icons {
 		margin-bottom: .5rem;
@@ -489,6 +492,9 @@
 		text-decoration: none;
 	}
 
+	.link2, .link3, .link8 {
+		color: ${c.blue} !important;
+	}
 	.link8 {
 		background: none !important;
 		padding: 0 !important;
