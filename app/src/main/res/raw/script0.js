@@ -412,6 +412,15 @@
 		overflow-y: hidden;
 		white-space: nowrap;
     }
+	#content .tab1 .row,
+	#content .tab1 .row td,
+	#content .tab1 .row1,
+	#content .tab1 .row1 td,
+	#content .tab1 .row2,
+	#content .tab1 .row2 td {
+		border: none;
+		border-right: 1px dotted #ccc;
+	}
 
 	.head1, .head1 td, .head2, .head2 td {
 		border-top: none !important;
