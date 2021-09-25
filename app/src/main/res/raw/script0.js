@@ -526,6 +526,16 @@
 	body.anketa #content > .tab1 > tbody {
 		white-space: normal;
 	}
+
+	/* KDOJEKDO */
+	body.kdojekdo #hledani span.form_select ~ a,
+	body.kdojekdo #hledani span.form_select ~ span,
+	body.kdojekdo #hledani span.form_select_multiple ~ a,
+	body.kdojekdo #hledani span.form_select_multiple ~ span {
+		position: relative !important;
+		top: 0 !important;
+		left: 0 !important;
+	}
 	`;
 
     function addViewportMeta() {
