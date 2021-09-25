@@ -83,7 +83,7 @@
         font-size: 0;
 		top: 0 !important;
     }
-    #login, #heslo {
+    #flogin #login, #flogin #heslo {
         width: 6rem;
         background-color: white;
         border: none;
@@ -93,7 +93,7 @@
 		font-size: .9rem;
 		padding: .25rem;
     }
-	#heslo {
+	#flogin #heslo {
 		width: 8rem;
 	}
     #flogin input[type="submit"] {
@@ -105,7 +105,7 @@
         margin: 0;
 		font-size: .9rem;
     }
-    label[for="login"], label[for="heslo"], #chkAutologin, #flogin label[for="chkAutologin"] {display: none}
+    #flogin label[for="login"], #flogin label[for="heslo"], #chkAutologin, #flogin label[for="chkAutologin"] {display: none}
 	#stev_user_roles {
 		display: inline-block;
 	}
@@ -124,6 +124,10 @@
 		font-size: 0;
 		background: none !important;
 		padding: 0 !important;
+	}
+	#stev_role_obj:hover {
+		color: white !important;
+		text-decoration: none !important;
 	}
 	#stev_role_obj::after {
 		content: "▼";
@@ -459,7 +463,7 @@
 		border: none !important;
 	}
 	.link5:hover {
-		background-color: #eaeaea !important;
+		background-color: transparent !important;
 		text-decoration: underline;
 	}
 	.seznam1 .akt {
@@ -496,7 +500,7 @@
 	/* INDEX */
 	body.index .menu1 + tr {display: none}
 	body.index #content {
-		padding-top: .25rem;
+		padding-top: 0;
 	}
 	body.index #content > div:nth-child(2n) {
 		display: block !important;

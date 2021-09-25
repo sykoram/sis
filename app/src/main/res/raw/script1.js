@@ -10,7 +10,7 @@
 
   scrollActiveMenuIntoView();
 
-  document.getElementById("login").placeholder = "Login";
-  document.getElementById("heslo").placeholder = "Password";
+  document.querySelector("#flogin #login").placeholder = "Login";
+  document.querySelector("#flogin #heslo").placeholder = "Password";
 
 })();
