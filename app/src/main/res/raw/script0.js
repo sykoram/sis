@@ -74,7 +74,6 @@
         display: block;
         margin-bottom: .25rem;
 		float: none;
-		white-space: break-spaces;
     }
 	#stev_role_icons.anonym {
         top: 0;
@@ -158,52 +157,25 @@
 	}
 	#stev_user_roles_fak {display: none}
 	#stev_icons {
-		margin-bottom: .5rem;
-		top: .3rem !important;
+		top: .15rem !important;
+		height: 1rem;
 	}
-	.stev_ico {
-		background: none !important;
-		color: white;
-		width: auto !important;
-		height: auto !important;
-		margin-left: .25rem;
+	#stev_icons .stev_ico {
+		background-size: contain;
+		filter: invert(1);
+		height: 2rem !important;
+		width: 2rem !important;
 		padding: 0 .25rem;
+		margin: -0.5rem 0.25rem;
 	}
-	#stev_home::after {
-		content: "⌂";
-        font-size: 1.8rem;
-        line-height: 1rem;
+	#stev_icons .stev_ico:hover {
+		background-position: 0 0 !important;
 	}
-	#stev_login::after {
-		/*content: "⎆";*/
-		content: "⚿";
-        font-size: 1.5rem;
-        line-height: 1rem;
+	#stev_layout {
+		display: none;
 	}
-	#stev_logoff::after {
-		content: "⚿";
-        font-size: 1.5rem;
-        line-height: 1rem;
-	}
-	#stev_settings::after {
-		content: "⚙";
-        font-size: 1.5rem;
-        line-height: 1rem;
-	}
-	#stev_lang_en::after {
-		content: "🇬🇧";
-        font-size: 1.5rem;
-        line-height: 1rem;
-	}
-	#stev_lang_cz::after {
-		content: "🇨🇿";
-        font-size: 1.5rem;
-        line-height: 1rem;
-	}
-	#stev_help::after {
-		content: "?";
-        font-size: 1.5rem;
-        line-height: 1rem;
+	#stev_lang_en, #stev_lang_cz {
+		filter: invert(0) !important;
 	}
 
 	#loading .head1 {
@@ -251,35 +223,17 @@
 		background-color: transparent !important;
 	}
 	.menu .ico > a {
-		background: none;
-		width: auto;
-		height: auto;
-		padding: .75rem !important;
+		background-size: contain;
+		width: 2rem;
+		height: 2rem;
+		padding: 0 .25rem;
+		margin: .25rem;
 	}
-	.menu .ico .home::after {
-        content: "⌂";
-        font-size: 1.4rem;
-        line-height: .9rem;
-    }
-	.menu .ico .bookmarks::after {
-        content: "☆";
-        font-size: 1.4rem;
-        line-height: 1rem;
-    }
+	.menu .ico > a:hover {
+		background-position: 0 0 !important;
+	}
 	.menu .ico .print {display: none}
     .menu .ico .modul {display: none}
-    /*.menu .ico .modul::after {
-        content: "⊞";
-        font-size: 1.5rem;
-        line-height: 1rem;
-    }
-    #stev_modul_list {
-        position: absolute;
-        left: 0;
-        z-index: 100;
-        background-color: ${c.blue2};
-        border: 1px solid ${c.blue};
-    }*/
     .menu1 {
         background-color: ${c.blue2} !important;
     }
@@ -481,14 +435,6 @@
 		overflow-y: hidden;
 		white-space: nowrap;
     }
-	.link5 {
-		line-height: .8em;
-		border: none !important;
-	}
-	.link5:hover {
-		background-color: transparent !important;
-		text-decoration: underline;
-	}
 	.seznam1 .akt {
 		border: none !important;
 		background-color: ${c.blue} !important;
@@ -509,6 +455,36 @@
 	.link8 {
 		background: none !important;
 		padding: 0 !important;
+	}
+
+	/* ICONS */
+	.link3 {
+		background-size: 1.5em;
+	}
+	img[src$="div_tip.gif"],
+	img[src$="ico_invert.gif"],
+	img[src$="ico_n_style.png"],
+	img[src$="ico_predmety.png"],
+	img[src$="ico_rozvrhng.png"],
+	img[src$="ico_ucitel_small.png"],
+	img[src$="ico_detail.png"],
+	img[src$="term_st_false.gif"],
+	img[src$="ico_delete.png"],
+	img[src$="ico_date.png"],
+	img[src$="chk_true.gif"],
+	img[src$="chk_false.gif"],
+	img[src$="ico_list.png"],
+	img[src$="div_legend.gif"],
+	img[src$="ico_select_all.gif"],
+	img[src$="ico_unselect_all.gif"],
+	img[src$="filtr_minus.gif"],
+	img[src$="ico_n_bin.png"],
+	img[src$="ico_dialog_find.png"],
+	img[src$="ico_dialog_null.png"],
+	img[src$="ico_dialog_plus.png"] {
+		height: 1.5em;
+		width: auto;
+		margin: -0.15em 0 -0.35em 0;
 	}
 
     /* FOOTER */
