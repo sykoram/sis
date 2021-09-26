@@ -311,6 +311,9 @@
 	.pozn1 {
 		border-top-width: 1px;
 	}
+	.div_legend {
+		border-top-width: 1px;
+	}
 
 	/* FILTER */
 	.filtr_div {
@@ -369,14 +372,14 @@
 		margin-left: .25rem;
 	}
 	.filtr_div + div[id^="filtr_hr"] {display: none}
-	.but_find, .but_next, .but_save, .but1 {
+	.but_find, .but_next, .but_save, .but1, .but_akce, .but_akce2, .but_delete {
 		background: ${c.blue} !important;
 		color: white !important;
 		padding: .25rem .75rem !important;
 		border: 0;
 		font-size: 1.2em;
 	}
-	.but_find > a, .but_next > a, .but_save > a, .but1 > a {
+	.but_find > a, .but_next > a, .but_save > a, .but1 > a, .but_akce2 > a, .but_delete > a {
 		color: white !important;
 	}
 	.but_filtr, img[src="../img/ico_n_arrow_refresh_small_grey.png"] {
@@ -397,6 +400,9 @@
 		display: none;
 	}
 	#akce_hr {display: none !important}
+	.inp2 {
+		background-color: white !important;
+	}
 	
 	/* CONTENT */
 	#content {
@@ -454,7 +460,8 @@
 		overflow-y: hidden;
 		white-space: nowrap;
     }
-	td img[src$="order_down.gif"], td img[src$="order_up.gif"] {
+	td img[src$="order_down.gif"], td img[src$="order_up.gif"],
+	td img[src$="order_down_a.gif"], td img[src$="order_up_a.gif"] {
 		display: none;
 	}
 	.tab1 *[id^="pamela"] {
