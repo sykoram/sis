@@ -545,6 +545,15 @@
 	}
 	body.index #content .link5 {
 		width: 16rem !important;
+		line-height: .9em;
+		border: none !important;
+	}
+	body.index #content .link5:hover {
+		background-color: transparent !important;
+		text-decoration: underline;
+	}
+	body.index #content .link5 > img:last-child {
+		height: 32px !important;
 	}
 	body.index #hint {display: none}
 
