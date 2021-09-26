@@ -431,6 +431,10 @@
 		border-right: 1px dotted #ddd;
 	}
 
+	#content .row_tab, #content .row_tab_left {
+		display: none;
+	}
+
 	.head1, .head1 td, .head2, .head2 td {
 		border-top: none !important;
 		border-bottom: none !important;
