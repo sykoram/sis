@@ -422,7 +422,7 @@
 	#content .tab1 .row2,
 	#content .tab1 .row2 td {
 		border: none;
-		border-right: 1px dotted #ccc;
+		border-right: 1px dotted #ddd;
 	}
 
 	.head1, .head1 td, .head2, .head2 td {
