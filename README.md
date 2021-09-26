@@ -8,8 +8,6 @@ This app does NOT collect usernames, passwords, personal information or any othe
 
 ## Screenshots
 
-The appearence may change over time, but I'll try to update these screenshots.
-
 *Note: The elements that appear cut off in the screenshots are, in fact, horizontally scrollable. \
 (Czech version is shown, but switching to English is possible.)*
 
