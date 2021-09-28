@@ -32,3 +32,8 @@ See the *Build* and *Run* menu to run the app, build it or generate signed APK.
 ## Permissions
 
 - full network access
+
+---
+
+Emojis designed by [OpenMoji](https://openmoji.org/) – the open-source emoji and icon project.
+
