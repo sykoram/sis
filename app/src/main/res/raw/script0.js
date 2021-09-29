@@ -387,6 +387,13 @@
 		border-right: 1px dotted #ddd;
 	}
 
+	.tab1[cellpadding="2"] td, .tab1[cellpadding="2"] th {
+		padding: 4px 5px;
+	}
+	.filtr_div .tab1[cellpadding="2"] td, .filtr_div .tab1[cellpadding="2"] th {
+		padding: 2px;
+	}
+
 	#content .row_tab, #content .row_tab_left {
 		display: none;
 	}
