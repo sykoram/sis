@@ -113,6 +113,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private val imageAssetsReplacements = mapOf(
+            // header icons
             "stev_home.gif" to "openmoji-black/E25E.png",
             "stev_settings.gif" to "openmoji-black/2699.png",
             "stev_login.gif" to "openmoji-black/1F513.png",
@@ -122,6 +123,7 @@ class MainActivity : AppCompatActivity() {
             "stev_help.gif" to "openmoji-black/2754.png",
             "stev_menu_home.gif" to "openmoji-black/E25E.png",
             "stev_menu_bookmarks.gif" to "openmoji-black/1F516.png",
+            // homepage icons
             "v4.gif" to "openmoji-color/0034-FE0F-20E3.png",
             "term_st2.gif" to "openmoji-color/1F4C5.png",
             "szz_st.gif" to "openmoji-color/1F393.png",
@@ -160,6 +162,8 @@ class MainActivity : AppCompatActivity() {
             "skolitel.gif" to "openmoji-color/1F9D1-200D-1F3EB.png",
             "soub_mana.gif" to "openmoji-color/1F4C2.png",
             "wstip_st.gif" to "openmoji-color/1F4B6.png",
+            "prezkumy_st.gif" to "openmoji-color/1F9FE.png",
+            // other - in filters, tables, ...
             "div_tip.gif" to "openmoji-color/2139.png",
             "ico_invert.gif" to "openmoji-color/E25B.png",
             "ico_n_style.png" to "openmoji-color/E265.png",
@@ -181,6 +185,7 @@ class MainActivity : AppCompatActivity() {
             "ico_dialog_find.png" to "openmoji-color/1F50E.png",
             "ico_dialog_null.png" to "openmoji-color/274C.png",
             "ico_dialog_plus.png" to "openmoji-color/2795.png",
+            "ico_n_link_go.png" to "openmoji-color/E269.png",
     )
 
     private fun replaceRequestWith(request: WebResourceRequest): WebResourceResponse? {

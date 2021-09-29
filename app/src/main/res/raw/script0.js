@@ -469,7 +469,7 @@
 		padding: 0 !important;
 	}
 
-	/* ICONS */
+	/* ICONS (IN FILTERS, TABLES, ...) */
 	.link3 {
 		background-size: 1.5em;
 	}
@@ -493,7 +493,8 @@
 	img[src$="ico_n_bin.png"],
 	img[src$="ico_dialog_find.png"],
 	img[src$="ico_dialog_null.png"],
-	img[src$="ico_dialog_plus.png"] {
+	img[src$="ico_dialog_plus.png"],
+	img[src$="ico_n_link_go.png"] {
 		height: 1.5em;
 		width: auto;
 		margin: -0.15em 0 -0.35em 0;
