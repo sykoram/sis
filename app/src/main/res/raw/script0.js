@@ -444,13 +444,16 @@
 		overflow-y: hidden;
 		white-space: nowrap;
     }
+	.seznam1 /*pagination*/ {
+		margin: .5rem .25rem !important;
+	}
 	.seznam1 .akt {
 		border: none !important;
 		background-color: ${c.blue} !important;
-		padding: .25rem;
+		padding: .25rem .375rem;
 	}
 	.seznam1 .link1 {
-		padding: .25rem;
+		padding: .25rem .375rem;
 		border: none;
 	}
 	.seznam1 .link1:hover {
