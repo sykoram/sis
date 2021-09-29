@@ -28,6 +28,7 @@
 
 	h1 {
 		font-size: 1.2rem;
+		margin: .25rem;
 	}
     
 	/* HEADER */
@@ -323,7 +324,8 @@
 		padding-left: .25rem;
 	}
 	.filtr_div input[type="checkbox"], .filtr_div input[type="radio"] {
-		margin-left: .25rem;
+		margin: 0 .25rem;
+		height: 1em;
 	}
 	.filtr_div + div[id^="filtr_hr"] {display: none}
 	.but_find, .but_next, .but_save, .but1, .but_akce, .but_akce2, .but_delete {
