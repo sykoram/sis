@@ -560,6 +560,11 @@
 		top: 0 !important;
 		left: 0 !important;
 	}
+
+	/* EMAIL */
+	body.omne.email.email_detail .form_div > .tab1 > tbody {
+		white-space: normal !important;
+	}
 	`;
 
     function addViewportMeta() {
