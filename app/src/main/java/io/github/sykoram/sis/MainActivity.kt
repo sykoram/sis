@@ -156,7 +156,7 @@ class MainActivity : AppCompatActivity() {
             "soub_mana.gif" to "openmoji-color/1F4C2.png",
             "wstip_st.gif" to "openmoji-color/1F4B6.png",
             "prezkumy_st.gif" to "openmoji-color/1F9FE.png",
-            // other - in filters, tables, ...
+            // other - in filters, tables - don't forget to add css rule to smaller it!
             "div_tip.gif" to "openmoji-color/2139.png",
             "ico_invert.gif" to "openmoji-color/E25B.png",
             "ico_n_style.png" to "openmoji-color/E265.png",
@@ -179,6 +179,7 @@ class MainActivity : AppCompatActivity() {
             "ico_dialog_null.png" to "openmoji-color/274C.png",
             "ico_dialog_plus.png" to "openmoji-color/2795.png",
             "ico_n_link_go.png" to "openmoji-color/E269.png",
+            "ico_n_help.png" to "openmoji-black/2754.png",
     )
 
     private fun replaceRequestWith(request: WebResourceRequest): WebResourceResponse? {
