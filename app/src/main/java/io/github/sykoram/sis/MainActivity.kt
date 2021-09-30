@@ -16,11 +16,6 @@ class MainActivity : AppCompatActivity() {
 
     var pageFinished = true
 
-    /* The first path part after "is.cuni.cz/studium/" (ev. with ".php" removed):
-         index, rozvrhng, predmety, term_st2, predm_st2, szz_st, zkous_st, anketa, dipl_st, grupicek, omne, role (...)
-       This will be added as a class to <body>. */
-    var pageIdentifier = ""
-
     val webClient: WebViewClient = object : WebViewClient() {
         override fun shouldOverrideUrlLoading(view: WebView, request: WebResourceRequest): Boolean {
             if (isUrlAllowed(request.url)) {
@@ -40,8 +35,7 @@ class MainActivity : AppCompatActivity() {
                 refreshLayout.isRefreshing = true
             }
 
-            pageIdentifier = getPageIdentifier(url)
-            view.evaluateJavascript("document.body.classList.add('$pageIdentifier');", null)
+            addPageIdentifiersToBody(view, url)
 
             resources.openRawResource(R.raw.script0)
                     .use { ins -> view.evaluateJavascript(readFileToString(ins), null) }
@@ -50,8 +44,7 @@ class MainActivity : AppCompatActivity() {
         override fun onPageFinished(view: WebView, url: String) {
             super.onPageFinished(view, url)
 
-            pageIdentifier = getPageIdentifier(url)
-            view.evaluateJavascript("document.body.classList.add('$pageIdentifier');", null)
+            addPageIdentifiersToBody(view, url)
 
             resources.openRawResource(R.raw.script0)
                     .use{ ins -> view.evaluateJavascript(readFileToString(ins), null) }

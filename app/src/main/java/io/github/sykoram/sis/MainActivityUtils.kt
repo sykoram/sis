@@ -1,6 +1,7 @@
 package io.github.sykoram.sis
 
 import android.net.Uri
+import android.webkit.WebView
 import java.io.InputStream
 import java.util.*
 
@@ -36,15 +37,37 @@ fun readFileToString(ins: InputStream?): String {
     return if (s.hasNext()) s.next() else ""
 }
 
-fun getPageIdentifier(url: String): String {
+/*
+    Adds page identifiers to body as classes.
+ */
+fun addPageIdentifiersToBody(view: WebView, url: String) {
+    val classes = getPageIdentifiers(url).joinToString(" ", " ")
+    view.evaluateJavascript("document.body.className += '$classes';", null)
+}
+
+/*
+    Returns List of page identifiers for SIS pages (starting with "is.cuni.cz/studium").
+    Path sections and "do" and "doe" parameters are considered.
+    Examples:
+        https://is.cuni.cz/studium/index.php?id=...&tid=& -> [index]
+        https://is.cuni.cz/studium/predm_st2/index.php?id=...&tid=&KEY=... -> [predm_st2]
+        https://is.cuni.cz/studium/predmety/index.php?id=...&tid=&do=prohl -> [predmety prohl]
+        https://is.cuni.cz/studium/omne/index.php?id=...&tid=&do=email&doe=email_detail&mail_id=...&arch=0 -> [omne email email_detail]
+ */
+fun getPageIdentifiers(url: String): List<String> {
     val uri = Uri.parse(url)
     val host = uri.host
     val path = uri.path
+    val doParam = uri.getQueryParameter("do")
+    val doeParam = uri.getQueryParameter("doe")
+
     if (host == "is.cuni.cz" && path!!.startsWith("/studium")) {
-        return path.replaceFirst("^/studium(/eng)?/?".toRegex(), "")
+        val ids = path.replaceFirst("^/studium(/eng)?/?".toRegex(), "")
                 .replaceFirst("(/index)?\\.php$".toRegex(), "")
                 .split("/")
-                .toTypedArray()[0]
+                .toList()
+        return listOf(ids, listOfNotNull(doParam, doeParam)).flatten() // concat lists
     }
-    return ""
+
+    return emptyList()
 }
