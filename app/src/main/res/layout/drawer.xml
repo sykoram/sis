@@ -54,13 +54,13 @@
             android:id="@+id/drawerAboutTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:autoLink="web|email"
             android:padding="10dp"
             android:text="@string/about_text"
             android:textColor="#000"
+            android:textColorLink="@color/primary_blue"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/drawerHeader"
-            android:autoLink="web|email"
-            android:textColorLink="@color/primary_blue" />
+            app:layout_constraintTop_toBottomOf="@id/drawerHeader" />
 
     </ScrollView>
 
@@ -80,9 +80,9 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/open_in_new_icon"
             android:contentDescription="@string/button_browser_description"
             android:onClick="openPageExternally"
+            android:src="@drawable/open_in_new_icon"
             app:tint="@color/primary_blue" />
 
         <ImageButton
@@ -90,9 +90,9 @@
             style="?android:attr/buttonBarButtonStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/refresh_icon"
             android:contentDescription="@string/button_refresh_description"
             android:onClick="refreshPage"
+            android:src="@drawable/refresh_icon"
             app:tint="@color/primary_blue" />
 
     </LinearLayout>
