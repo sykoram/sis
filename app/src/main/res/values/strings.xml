@@ -1,4 +1,23 @@
 <resources>
     <string name="app_name">SIS</string>
     <string name="header">UK\nCUNI</string>
+    <string name="about_text">
+        Ahoj, vítej v neoficiálním klientu pro SIS Univerzity Karlovy!
+        \n
+        \nTato aplikace funguje tak, že načte webovou stránku SISu a vloží do ní styly a funkce tak, aby ji bylo příjemné používat i na mobilních zařízeních a vypadala celkově moderněji.
+        \n
+        \nAplikace nikam neodesílá přihlašovací údaje ani jiná uživatelská data. Na její zdrojový kód se můžeš podívat na https://github.com/sykoram/sis
+        \n
+        \nNěkteré prvky a funkce mohou vypadat rozbitě, mít původní vzhled, nebo nemusí fungovat vůbec - za nic neručím. Pokud něco takového objevíš, nebo máš nápad, jak aplikaci dále vylepšit, budu rád za nahlášení, třeba na email sykoram.dev@gmail.com, nebo issue na GitHubu (pokud ti to nic neříká a nestuduješ zrovna informatiku, tak si toho nevšímej).
+        \n
+        \nDoufám, že ti bude aplikace dobře sloužit :)
+        \n
+        \nMichal Sýkora
+        \n
+        \nP.S. I když tuhle aplikaci nejspíš používáš, abys utekl od SIS3, tak zvaž, prosím, přihlášení do testování SIS4. Čím víc lidí bude novou verzi testovat a sdělovat podněty na opravy a zlepšení, tím lepší ve výsledku bude a o to spokojenější budou všichni, včetně všech budoucích studentů.
+        \n
+        \nP.P.S. Pro opětovné otevření tohoto okna stačí swipenout od levé strany obrazovky doprava.
+    </string>
+    <string name="button_browser_description">Otevřít v prohlížeči</string>
+    <string name="button_refresh_description">Znovu načíst</string>
 </resources>

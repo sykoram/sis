@@ -51,8 +51,10 @@
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#FFFFFF"
-        app:menu="@menu/navigation_drawer"
-        app:headerLayout="@layout/header_navigation_drawer" />
+        android:background="#FFFFFF">
+
+        <include layout="@layout/drawer" />
+
+    </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
