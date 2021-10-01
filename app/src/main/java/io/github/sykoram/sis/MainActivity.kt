@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.view.View
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import java.net.URLConnection
 
@@ -197,5 +199,17 @@ class MainActivity : AppCompatActivity() {
         }
 
         return null
+    }
+
+    fun openPageExternally(view: View) {
+        if (webView.url != null) {
+            startActivity(Intent(Intent.ACTION_VIEW, webView.url!!.toUri()))
+            findViewById<DrawerLayout>(R.id.drawerLayout).closeDrawers()
+        }
+    }
+
+    fun refreshPage(view: View) {
+        webView.reload()
+        findViewById<DrawerLayout>(R.id.drawerLayout).closeDrawers()
     }
 }

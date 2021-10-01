@@ -82,6 +82,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/open_in_new_icon"
             android:contentDescription="@string/button_browser_description"
+            android:onClick="openPageExternally"
             app:tint="@color/primary_blue" />
 
         <ImageButton
@@ -91,6 +92,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/refresh_icon"
             android:contentDescription="@string/button_refresh_description"
+            android:onClick="refreshPage"
             app:tint="@color/primary_blue" />
 
     </LinearLayout>
