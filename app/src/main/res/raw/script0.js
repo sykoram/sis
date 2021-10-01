@@ -496,9 +496,10 @@
 	img[src$="ico_dialog_plus.png"],
 	img[src$="ico_n_link_go.png"],
 	img[src$="ico_n_help.png"] {
-		height: 1.5em;
+		height: 1em;
 		width: auto;
-		margin: -0.15em 0 -0.35em 0;
+		transform: scale(1.6) translateY(6%);
+		margin: 0 .25em;
 	}
 
     /* FOOTER */
