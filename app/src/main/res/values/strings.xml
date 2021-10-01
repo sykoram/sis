@@ -16,7 +16,7 @@
         \n
         \nP.S. I když tuhle aplikaci nejspíš používáš, abys utekl od SIS3, tak zvaž, prosím, přihlášení do testování SIS4. Čím víc lidí bude novou verzi testovat a sdělovat podněty na opravy a zlepšení, tím lepší ve výsledku bude a o to spokojenější budou všichni, včetně všech budoucích studentů.
         \n
-        \nP.P.S. Níže najdeš tlačítka pro otevření stránky v prohlížeči a pro refresh. Pro opětovné otevření tohoto okna stačí swipenout od levé strany obrazovky doprava.
+        \nP.P.S. Ikony níže jsou \"otevřít stránku v prohlížeči\" a \"refresh\". Pro opětovné zobrazení tohoto okna stačí swipenout od levé strany obrazovky doprava.
     </string>
     <string name="button_browser_description">Otevřít v prohlížeči</string>
     <string name="button_refresh_description">Znovu načíst</string>
