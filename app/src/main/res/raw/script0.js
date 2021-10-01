@@ -387,11 +387,15 @@
 		border-right: 1px dotted #ddd;
 	}
 
-	.tab1[cellpadding="2"] td, .tab1[cellpadding="2"] th {
+	.tab1 .row td, .tab1 .row th,
+	.tab1 .row1 td, .tab1 .row1 th,
+	.tab1 .row2 td, .tab1 .row2 th,
+	.tab1 .head1 td, .tab1 .head1 th,
+	.tab1 .head2 td, .tab1 .head2 th,
+	.tab1 .head3 td, .tab1 .head3 th,
+	.tab1 .head4 td, .tab1 .head4 th,
+	.tab1 .head10 td, .tab1 .head10 th {
 		padding: 4px 5px;
-	}
-	.filtr_div .tab1[cellpadding="2"] td, .filtr_div .tab1[cellpadding="2"] th {
-		padding: 2px;
 	}
 
 	#content .row_tab, #content .row_tab_left {
