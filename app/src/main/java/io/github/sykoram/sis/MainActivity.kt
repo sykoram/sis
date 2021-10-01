@@ -7,6 +7,7 @@ import android.view.View
 import android.webkit.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import java.net.URLConnection
@@ -84,6 +85,14 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 
         setContentView(R.layout.activity_main)
+
+        // open drawer on first run
+        val settings = getSharedPreferences("SharedPrefsFile", 0)
+        if (settings.getBoolean("first_run", true)) {
+            findViewById<DrawerLayout>(R.id.drawerLayout).openDrawer(GravityCompat.START, true)
+            settings.edit().putBoolean("first_run", false).apply()
+        }
+
         webView = findViewById(R.id.webView)
         webView.webViewClient = webClient
         webView.webChromeClient = webChromeClient
