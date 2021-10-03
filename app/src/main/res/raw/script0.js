@@ -525,12 +525,14 @@
 	body.index #content {
 		padding-top: 0;
 	}
-	body.index #content > div:nth-child(2n) {
+	body.index #content > div {
 		display: block !important;
+	}
+	body.index #content > div[style="color: #FFF; background: #868686; font-weight: bold; padding: 0px 7px 0px 5px; display: inline;"] {
 		background-image: linear-gradient(to right, #1f4789, #2a77b5) !important;
 		padding: .5rem !important;
 	}
-	body.index #content > div:nth-child(2n+1) {
+	body.index #content > div[style="border: 1px solid #C0C0C0; margin-bottom: 5px;background: #F5F5F5; padding: 3px 8px 3px 8px ;"] {
 		background-color: white !important;
 		border: none !important;
 		padding: .5rem !important;
