@@ -151,6 +151,8 @@ val fromAssetsReplacements = mapOf(
     "ico_dialog_plus.png" to "openmoji-color/2795.png",
     "ico_n_link_go.png" to "openmoji-color/E269.png",
     "ico_n_help.png" to "openmoji-black/2754.png",
+    "ico_n_page_attach.png" to "openmoji-color/1F4CE.png",
+    "ico_file.png" to "openmoji-color/1F4BE.png",
 )
 
 fun replaceRequestWithAssets(request: WebResourceRequest, assets: AssetManager): WebResourceResponse? {

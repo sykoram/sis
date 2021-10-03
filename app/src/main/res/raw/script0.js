@@ -499,7 +499,9 @@
 	img[src$="ico_dialog_null.png"],
 	img[src$="ico_dialog_plus.png"],
 	img[src$="ico_n_link_go.png"],
-	img[src$="ico_n_help.png"] {
+	img[src$="ico_n_help.png"],
+	img[src$="ico_n_page_attach.png"],
+	img[src$="ico_file.png"] {
 		height: 1em;
 		width: auto;
 		transform: scale(1.6) translateY(6%);
