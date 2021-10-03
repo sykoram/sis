@@ -1,10 +1,14 @@
 package io.github.sykoram.sis
 
+import android.app.DownloadManager
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
+import android.os.Environment
 import android.view.View
 import android.webkit.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.net.toUri
 import androidx.core.view.GravityCompat
@@ -73,6 +77,21 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    val downloadListener: DownloadListener = object : DownloadListener {
+        override fun onDownloadStart(url: String?, userAgent: String?, contentDisposition: String?, mimeType: String?, contentLength: Long) {
+            val request = DownloadManager.Request(Uri.parse(url))
+            request.addRequestHeader("cookie", CookieManager.getInstance().getCookie(url))
+            request.addRequestHeader("User-Agent", userAgent)
+            request.setMimeType(mimeType)
+            request.setTitle(URLUtil.guessFileName(url, contentDisposition, mimeType))
+            request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED)
+            request.setDestinationInExternalPublicDir(Environment.DIRECTORY_DOWNLOADS, URLUtil.guessFileName(url, contentDisposition, mimeType))
+            (getSystemService(DOWNLOAD_SERVICE) as DownloadManager).enqueue(request)
+
+            Toast.makeText(applicationContext, R.string.downloading_file, Toast.LENGTH_LONG).show()
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -88,6 +107,7 @@ class MainActivity : AppCompatActivity() {
         webView = findViewById(R.id.webView)
         webView.webViewClient = webClient
         webView.webChromeClient = webChromeClient
+        webView.setDownloadListener(downloadListener)
         webView.settings.cacheMode = WebSettings.LOAD_DEFAULT
         webView.settings.javaScriptEnabled = true
         webView.visibility = View.GONE

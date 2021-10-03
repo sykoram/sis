@@ -20,4 +20,5 @@
     </string>
     <string name="button_browser_description">Otevřít v prohlížeči</string>
     <string name="button_refresh_description">Znovu načíst</string>
+    <string name="downloading_file">Stahování…</string>
 </resources>
