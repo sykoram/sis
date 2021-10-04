@@ -256,6 +256,15 @@
     }
 	.menu .shadow, .menu .shadow_a {display: none;}
 	
+	#fastSemestrPick {
+		box-shadow: none !important;
+		background-color: ${c.blue4} !important;
+		border-color: ${c.blue2} !important;
+	}
+	#fastSemestrPickClose {
+		background: transparent !important;
+	}
+	
 	/* MESSAGES */
 	td.info_ico, td.warning_ico, td.error_ico {
 		display: none;
@@ -382,9 +391,13 @@
 	#content .tab1 .row1,
 	#content .tab1 .row1 td,
 	#content .tab1 .row2,
-	#content .tab1 .row2 td {
+	#content .tab1 .row2 td,
+	.head4, tr.head4 td {
 		border: none;
 		border-right: 1px dotted #ddd;
+	}
+	.head4 + .head4 {
+		border-top: 1px dotted #ddd;
 	}
 
 	.tab1 .row td, .tab1 .row th,
@@ -448,6 +461,17 @@
 		overflow-y: hidden;
 		white-space: nowrap;
     }
+	#roztab td.day, #roztab td.daygrey {
+		border: 1px dotted black;
+		text-align: center;
+	}
+	#roztab .day .outer a:hover {
+		background-color: transparent !important;
+	}
+	#roztab .link1 {
+		color: ${c.blue};
+	}
+
 	.seznam1 /*pagination*/ {
 		margin: .5rem .25rem !important;
 	}
@@ -471,6 +495,11 @@
 	.link8 {
 		background: none !important;
 		padding: 0 !important;
+	}
+
+	#tip_div {
+		border-bottom: none !important;
+		margin: .5rem .25rem !important;
 	}
 
 	/* ICONS (IN FILTERS, TABLES, ...) */
