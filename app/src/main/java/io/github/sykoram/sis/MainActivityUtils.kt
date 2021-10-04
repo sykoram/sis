@@ -6,6 +6,7 @@ import android.webkit.WebResourceRequest
 import android.webkit.WebResourceResponse
 import android.webkit.WebView
 import java.io.InputStream
+import java.lang.Exception
 import java.net.URLConnection
 import java.util.*
 
@@ -127,7 +128,7 @@ val fromAssetsReplacements = mapOf(
     "soub_mana.gif" to "openmoji-color/1F4C2.png",
     "wstip_st.gif" to "openmoji-color/1F4B6.png",
     "prezkumy_st.gif" to "openmoji-color/1F9FE.png",
-    "dotaznik.gif" to "openmoji-block/2753.png",
+    "dotaznik.gif" to "openmoji-black/2754.png",
     "cml.gif" to "openmoji-color/1F4DA.png",
     "podprij.gif" to "openmoji-color/1F4C3.png",
     "staze_uc.gif" to "openmoji-color/1F30D.png",
@@ -165,11 +166,15 @@ val fromAssetsReplacements = mapOf(
 )
 
 fun replaceRequestWithAssets(request: WebResourceRequest, assets: AssetManager): WebResourceResponse? {
-
     val file = request.url.lastPathSegment
+
     if (fromAssetsReplacements.containsKey(file)) {
         val newFile = fromAssetsReplacements[file]!!
-        return WebResourceResponse(URLConnection.guessContentTypeFromName(newFile), "", assets.open(newFile))
+        try {
+            return WebResourceResponse(URLConnection.guessContentTypeFromName(newFile), "", assets.open(newFile))
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     return null
