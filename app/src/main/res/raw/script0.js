@@ -37,7 +37,7 @@
 	}
 	#stev_header_bkg {
         background-color: #2A77B5;
-		background-image: linear-gradient(to right, #1f4789, #2a77b5);
+		background-image: linear-gradient(to right, #1f4789, #3f91d3);
         color: white;
 		margin: 0;
 		display: flex;
@@ -558,7 +558,7 @@
 		display: block !important;
 	}
 	body.index #content > div[style="color: #FFF; background: #868686; font-weight: bold; padding: 0px 7px 0px 5px; display: inline;"] {
-		background-image: linear-gradient(to right, #1f4789, #2a77b5) !important;
+		background-image: linear-gradient(to right, #1f4789, #3f91d3) !important;
 		padding: .5rem !important;
 	}
 	body.index #content > div[style="border: 1px solid #C0C0C0; margin-bottom: 5px;background: #F5F5F5; padding: 3px 8px 3px 8px ;"] {
