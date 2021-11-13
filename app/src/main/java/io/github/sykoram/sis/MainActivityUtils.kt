@@ -169,7 +169,9 @@ val fromAssetsReplacements = mapOf(
     "ico_download.png" to "openmoji-color/E25C.png",
     "ico_n_cross.png" to "openmoji-color/274C.png",
     "ico_n_cancel.png" to "openmoji-color/274C.png",
-    "ico_detail_history.png" to "openmoji-color/1F5D3.png"
+    "ico_detail_history.png" to "openmoji-color/1F5D3.png",
+    "ajax-loader_big.gif" to "icons/loading-circle.png", // loader
+    "ajax-loader.gif" to "icons/loading-circle.png", // loader
     // don't forget to add css rule to smaller it!
 )
 

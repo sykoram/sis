@@ -544,6 +544,30 @@
 		margin: 0 .25em;
 	}
 
+	/* LOADERS */
+	@keyframes rotation {
+		from {
+			transform: rotate(0deg);
+		}
+		to {
+			transform: rotate(359deg);
+		}
+	}
+	img[src$="ajax-loader.gif"] {
+		height: 16px;
+		width: 16px;
+		animation: rotation 1.2s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+	img[src$="ajax-loader_big.gif"] {
+		height: 32px;
+		width: 32px;
+		animation: rotation 1.2s;
+		animation-timing-function: linear;
+		animation-iteration-count: infinite;
+	}
+
 	/* HINT */
 	#hint {
 		max-width: 100%;
