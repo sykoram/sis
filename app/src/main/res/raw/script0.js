@@ -544,6 +544,20 @@
 		margin: 0 .25em;
 	}
 
+	/* HINT */
+	#hint {
+		max-width: 100%;
+		margin-top: 10px !important;
+		transform: translateX(5px);
+	}
+	#hint .tab1 {
+		display: flex;
+	}
+	#hint .tab1 > tbody {
+		overflow: auto;
+		white-space: nowrap;
+	}
+
     /* FOOTER */
 	#foot, #foot + .shadow {
         display: none;
