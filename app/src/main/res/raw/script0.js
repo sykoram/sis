@@ -530,7 +530,14 @@
 	img[src$="ico_n_link_go.png"],
 	img[src$="ico_n_help.png"],
 	img[src$="ico_n_page_attach.png"],
-	img[src$="ico_file.png"] {
+	img[src$="ico_file.png"],
+	img[src$="ico_n_add.png"],
+	img[src$="term_st_zapsan.gif"],
+	img[src$="ico_n_arrow_right.png"],
+	img[src$="ico_download.png"],
+	img[src$="ico_n_cross.png"],
+	img[src$="ico_n_cancel.png"],
+	img[src$="ico_detail_history.png"] {
 		height: 1em;
 		width: auto;
 		transform: scale(1.6) translateY(6%);

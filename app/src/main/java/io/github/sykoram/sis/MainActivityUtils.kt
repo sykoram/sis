@@ -163,6 +163,14 @@ val fromAssetsReplacements = mapOf(
     "ico_n_help.png" to "openmoji-black/2754.png",
     "ico_n_page_attach.png" to "openmoji-color/1F4CE.png",
     "ico_file.png" to "openmoji-color/1F4BE.png",
+    "ico_n_add.png" to "openmoji-color/E25F.png",
+    "term_st_zapsan.gif" to "openmoji-color/2714.png",
+    "ico_n_arrow_right.png" to "openmoji-color/27A1.png",
+    "ico_download.png" to "openmoji-color/E25C.png",
+    "ico_n_cross.png" to "openmoji-color/274C.png",
+    "ico_n_cancel.png" to "openmoji-color/274C.png",
+    "ico_detail_history.png" to "openmoji-color/1F5D3.png"
+    // don't forget to add css rule to smaller it!
 )
 
 fun replaceRequestWithAssets(request: WebResourceRequest, assets: AssetManager): WebResourceResponse? {
