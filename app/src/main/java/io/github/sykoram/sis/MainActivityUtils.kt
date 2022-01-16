@@ -149,7 +149,9 @@ val fromAssetsReplacements = mapOf(
     "ico_delete.png" to "openmoji-color/E262.png",
     "ico_date.png" to "openmoji-color/1F5D3.png",
     "chk_true.gif" to "openmoji-color/2714.png",
+    "chk_true.png" to "openmoji-color/2714.png",
     "chk_false.gif" to "openmoji-color/274C.png",
+    "chk_false.png" to "openmoji-color/274C.png",
     "ico_list.png" to "openmoji-color/1F4D1.png",
     "div_legend.gif" to "openmoji-color/2139.png",
     "ico_select_all.gif" to "openmoji-color/2714.png",
@@ -172,6 +174,8 @@ val fromAssetsReplacements = mapOf(
     "ico_detail_history.png" to "openmoji-color/1F5D3.png",
     "ajax-loader_big.gif" to "icons/loading-circle.png", // loader
     "ajax-loader.gif" to "icons/loading-circle.png", // loader
+    "ico_n_eye.png" to "openmoji-color/1F441.png",
+    "term_st_splnen.gif" to "openmoji-color/2611.png",
     // don't forget to add css rule to smaller it!
 )
 

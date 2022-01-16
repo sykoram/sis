@@ -517,7 +517,9 @@
 	img[src$="ico_delete.png"],
 	img[src$="ico_date.png"],
 	img[src$="chk_true.gif"],
+	img[src$="chk_true.png"],
 	img[src$="chk_false.gif"],
+	img[src$="chk_false.png"],
 	img[src$="ico_list.png"],
 	img[src$="div_legend.gif"],
 	img[src$="ico_select_all.gif"],
@@ -537,7 +539,9 @@
 	img[src$="ico_download.png"],
 	img[src$="ico_n_cross.png"],
 	img[src$="ico_n_cancel.png"],
-	img[src$="ico_detail_history.png"] {
+	img[src$="ico_detail_history.png"],
+	img[src$="ico_n_eye.png"],
+	img[src$="term_st_splnen.gif"] {
 		height: 1em;
 		width: auto;
 		transform: scale(1.6) translateY(6%);
@@ -648,6 +652,12 @@
 	/* EMAIL */
 	body.omne.email.email_detail .form_div > .tab1 > tbody {
 		white-space: normal !important;
+	}
+
+	/* TERMÍNY ZKOUŠEK */
+	body.term_st2 .kalendar .hodina .panel img {
+		height: 1.1em;
+		margin-bottom: .7em;
 	}
 	`;
 
