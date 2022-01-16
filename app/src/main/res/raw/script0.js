@@ -541,7 +541,10 @@
 	img[src$="ico_n_cancel.png"],
 	img[src$="ico_detail_history.png"],
 	img[src$="ico_n_eye.png"],
-	img[src$="term_st_splnen.gif"] {
+	img[src$="term_st_splnen.gif"],
+	img[src$="ico_edit.gif"],
+	img[src$="ico_edit.png"],
+	img[src$="ico_n_magnifier.png"] {
 		height: 1em;
 		width: auto;
 		transform: scale(1.6) translateY(6%);
