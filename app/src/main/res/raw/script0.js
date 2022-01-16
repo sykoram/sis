@@ -377,6 +377,7 @@
         display: flex;
         width: 100%;
         margin: .25rem 0 !important;
+		flex-direction: column;
     }
 	#content .tab1 > colgroup {
 		display: none;
