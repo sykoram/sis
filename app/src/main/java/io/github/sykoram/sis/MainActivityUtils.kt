@@ -86,6 +86,7 @@ val fromAssetsReplacements = mapOf(
     "stev_en.gif" to "openmoji-color/1F1EC-1F1E7.png",
     "stev_cz.gif" to "openmoji-color/1F1E8-1F1FF.png",
     "stev_help.gif" to "openmoji-black/2754.png",
+    "stev_report.gif" to "openmoji-black/2757.png",
     "stev_menu_home.gif" to "openmoji-black/E25E.png",
     "stev_menu_bookmarks.gif" to "openmoji-black/1F516.png",
     // homepage icons
