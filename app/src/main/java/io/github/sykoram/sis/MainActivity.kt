@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
         webView.settings.cacheMode = WebSettings.LOAD_DEFAULT
         webView.settings.javaScriptEnabled = true
         webView.visibility = View.GONE
-        webView.loadUrl("https://is.cuni.cz/studium")
+        webView.loadUrl("https://is.cuni.cz/studium/index.php")
 
         refreshLayout = findViewById(R.id.swipeRefreshLayout)
         refreshLayout.setColorSchemeResources(R.color.primary_blue)
