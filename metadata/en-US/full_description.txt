@@ -1,0 +1,4 @@
+This is a basic Android app, which loads the website of SIS CUNI (using WebView) and injects custom styles and scripts to make the website more mobile- and user-friendly.
+
+This app does NOT collect usernames, passwords, personal information or any other data.
+.
