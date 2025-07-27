@@ -11,9 +11,9 @@ android {
         minSdk 21
         targetSdk 34
 
-        def version = [1, 8, 1]
-        versionCode (version[0] * 10000 + version[1] * 100 + version[2])
-        versionName "${version[0]}.${version[1]}.${version[2]}"
+        // DON'T FORGET TO CHANGE BOTH!
+        versionCode 10801
+        versionName "1.8.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
