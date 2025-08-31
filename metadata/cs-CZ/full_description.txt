@@ -1,0 +1,4 @@
+Jednoduchá Android aplikace, která načte stránku SIS UK (pomocí WebView) a vloží vlastní styly a skripty, aby byla stránka přívětivější pro uživatele na mobilních zařízeních.
+
+Tato aplikace NESBÍRÁ žádné přihlašovací údaje, osobní informace ani jiná data.
+.
