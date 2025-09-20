@@ -1,1 +1,1 @@
-Unofficial client for SIS CUNI (Student Information System of Charles University)
+Unofficial client for SIS CUNI (Student Information System, Charles University)
