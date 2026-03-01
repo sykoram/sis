@@ -16,7 +16,7 @@ fun isUrlAllowed(url: Uri): Boolean {
         return false
     }
 
-    val allowedBeginnings = listOf("is.cuni.cz/studium", "idp.cuni.cz", "ldapuser.cuni.cz")
+    val allowedBeginnings = listOf("is.cuni.cz/studium", "idp.cuni.cz", "ldapuser.cuni.cz", "cas.cuni.cz")
     val disallowedBeginnings = listOf("is.cuni.cz/studium/v4")
     val hostAndPath = url.host + url.path
     var allowed = false
