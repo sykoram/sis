@@ -164,7 +164,7 @@
 	#stev_icons .stev_ico {
 		background-size: contain;
 		filter: invert(1);
-		height: 2rem !important;
+		height: 1.7rem !important;
 		width: 2rem !important;
 		padding: 0 .25rem;
 		margin: -0.5rem 0.25rem;
@@ -172,6 +172,14 @@
 	#stev_icons .stev_ico:hover {
 		background-position: 0 0 !important;
 	}
+	#stev_icons .stev_ico_with_text {
+    	width: auto !important;
+    	background-color: transparent !important;
+    	padding-left: 2rem;
+    }
+    #stev_icons .stev_ico_with_text:hover {
+    	border: none !important;
+    }
 	#stev_layout {
 		display: none;
 	}
