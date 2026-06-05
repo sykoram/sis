@@ -1,6 +1,7 @@
 package io.github.sykoram.sis
 
 import android.app.DownloadManager
+import android.content.ActivityNotFoundException
 import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
@@ -28,7 +29,11 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
 
-            startActivity(Intent(Intent.ACTION_VIEW, request.url))
+            try {
+                startActivity(Intent(Intent.ACTION_VIEW, request.url))
+            } catch (e: ActivityNotFoundException) {
+                Toast.makeText(applicationContext, R.string.no_app_to_open_link, Toast.LENGTH_LONG).show()
+            }
             return true
         }
 
